@@ -1,4 +1,5 @@
 import Categories from "@/components/Categories";
+import ComingSoon from "@/components/ComingSoon";
 import Finale from "@/components/Finale";
 import Hero from "@/components/Hero";
 import Intro from "@/components/Intro";
@@ -9,8 +10,16 @@ import Popular from "@/components/Popular";
 import Reviews from "@/components/Reviews";
 import Signature from "@/components/Signature";
 import Story from "@/components/Story";
+import { OPENING_AT } from "@/lib/data";
+
+// Checked per request (not baked in at build time) so the site flips to the full menu on its own once MY3 opens.
+export const dynamic = "force-dynamic";
 
 export default function Home() {
+  if (Date.now() < new Date(OPENING_AT).getTime()) {
+    return <ComingSoon />;
+  }
+
   return (
     <>
       <Intro />

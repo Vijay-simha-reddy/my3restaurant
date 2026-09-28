@@ -20,8 +20,10 @@ import kulfi from "@/public/images/kulfi.jpg";
 import lassi from "@/public/images/lassi.jpg";
 import chai from "@/public/images/chai.jpg";
 import mangoCooler from "@/public/images/mango-cooler.jpg";
+import diningHall from "@/public/images/dining-hall.jpg";
 
 export const img = {
   biryaniPlate, biryaniPot, paneer, curries, butterChicken, chickenCurry, chickenMasala, mutton, samosa,
   samosaClose, tikka, kebabGrill, lambNaan, thali, spices, interior, mithai, chamCham, kulfi, lassi, chai, mangoCooler,
+  diningHall,
 };

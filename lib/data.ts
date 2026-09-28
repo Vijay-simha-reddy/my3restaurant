@@ -1,6 +1,9 @@
 import type { StaticImageData } from "next/image";
 import { img } from "./images";
 
+/** Doors open 9:00 am, Oct 14 2026 (Gajwel is IST, UTC+5:30). */
+export const OPENING_AT = "2026-10-14T09:00:00+05:30";
+
 export type CategoryId = "biryani" | "curries" | "starters" | "veg" | "nonveg" | "desserts" | "drinks";
 
 export type Dish = {
