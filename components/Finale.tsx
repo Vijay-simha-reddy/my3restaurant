@@ -3,7 +3,7 @@ import { Reveal, SplitText } from "./Motion";
 import { img } from "@/lib/images";
 import Logo from "./Logo";
 
-const MAPS = "https://www.google.com/maps/search/?api=1&query=St.+Joseph%27s+School+Pregnapur+Road+Gajwel";
+const MAPS = "https://www.google.com/maps/search/?api=1&query=MY3+Family+Restaurant+Gajwel";
 
 export default function Finale() {
   return (
