@@ -1,4 +1,27 @@
 import { SITE_URL } from "./site";
+import { dishes, filters, type CategoryId } from "./data";
+
+// "veg"/"nonveg" are dietary tags, not physical menu sections — every dish also
+// carries exactly one course tag (biryani/curries/starters/desserts/drinks), so
+// intersecting against `filters` (minus "all") gives each dish exactly one section.
+const menuSections = filters
+  .filter((f): f is { id: CategoryId; label: string } => f.id !== "all")
+  .map((f) => ({
+    "@type": "MenuSection",
+    name: f.label,
+    hasMenuItem: dishes
+      .filter((d) => d.cats.includes(f.id))
+      .map((d) => ({
+        "@type": "MenuItem",
+        name: d.name,
+        description: d.desc,
+        offers: {
+          "@type": "Offer",
+          price: d.price,
+          priceCurrency: "INR",
+        },
+      })),
+  }));
 
 /** Restaurant schema. Every field here must match the Google Business Profile exactly — Google cross-checks them. */
 export const restaurantSchema = {
@@ -28,5 +51,10 @@ export const restaurantSchema = {
     },
   ],
   acceptsReservations: true,
-  hasMenu: `${SITE_URL}/#menu`,
+  hasMenu: {
+    "@type": "Menu",
+    name: "MY3 Menu",
+    url: `${SITE_URL}/#menu`,
+    hasMenuSection: menuSections,
+  },
 };

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "MY3 Family Restaurant in Gajwel | Biryani, Kebabs & Curries",
   description:
-    "MY3 is a family restaurant in Gajwel serving Hyderabadi dum biryani, tandoori kebabs and slow-cooked curries, made fresh with hand-ground masalas. Beside St. Joseph's School, Pregnapur Road, Gajwel.",
+    "Craving real Hyderabadi biryani in Gajwel? MY3 seals every pot fresh, grills kebabs live, and serves it hot in 30 minutes. Order online today.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -31,13 +31,11 @@ export const metadata: Metadata = {
     title: "MY3 Family Restaurant in Gajwel | Biryani, Kebabs & Curries",
     description:
       "Hyderabadi dum biryani, live-grill kebabs and slow curries in Gajwel. Beside St. Joseph's School, Pregnapur Road.",
-    images: [{ url: "/images/biryani-plate.jpg", alt: "Hyderabadi dum biryani served at MY3, Gajwel" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "MY3 Family Restaurant in Gajwel",
     description: "Hyderabadi dum biryani, live-grill kebabs and slow curries in Gajwel.",
-    images: ["/images/biryani-plate.jpg"],
   },
   robots: { index: true, follow: true },
 };

@@ -55,7 +55,7 @@ export default function Popular() {
       <div className="head">
         <div>
           <Reveal><p className="eyebrow">Popular right now</p></Reveal>
-          <SplitText text="Dishes our guests *keep* coming back for" />
+          <SplitText text="The *biryani* Gajwel keeps coming back for" />
         </div>
         <Reveal delay={0.15}>
           <div className="filters" role="tablist" aria-label="Filter dishes">
