@@ -1,5 +1,4 @@
 import Categories from "@/components/Categories";
-import FAQ from "@/components/FAQ";
 import Finale from "@/components/Finale";
 import Hero from "@/components/Hero";
 import Intro from "@/components/Intro";
@@ -25,7 +24,6 @@ export default function Home() {
         <Story />
         <Offer />
         <Reviews />
-        <FAQ />
         <Finale />
       </main>
     </>

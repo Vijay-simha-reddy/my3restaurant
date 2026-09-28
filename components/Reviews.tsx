@@ -20,7 +20,7 @@ export default function Reviews() {
       <div className="section head reviews-head">
         <div>
           <Reveal><p className="eyebrow">Guest experience</p></Reveal>
-          <SplitText text="Loved at every table in *Gajwel*" />
+          <SplitText text="Loved at *every* table" />
         </div>
         <Reveal delay={0.15}>
           <div className="score">
