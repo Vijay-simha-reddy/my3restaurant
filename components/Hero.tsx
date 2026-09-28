@@ -32,7 +32,7 @@ export default function Hero() {
     <section className="hero" id="top">
       <div className="hero-copy">
         <motion.p className="eyebrow" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 0.7 }}>
-          <span className="pulse" /> Family restaurant · Dum-cooked daily
+          <span className="pulse" /> Family restaurant in Gajwel · Dum-cooked daily
         </motion.p>
         <SplitText as="h1" text="Real food. Real *spice.* Made to be *shared.*" immediate delay={1.05} />
         <motion.p className="lede" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.5, duration: 0.8 }}>

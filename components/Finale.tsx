@@ -21,7 +21,7 @@ export default function Finale() {
           <p className="cta-text">Order in two taps, or book a table and let us take care of the rest.</p>
           <div className="cta">
             <a href="#menu" className="btn">Order online <span className="arrow">→</span></a>
-            <a href="tel:+917842793473" className="btn btn-ghost">Reserve a table</a>
+            <a href="tel:+919010001484" className="btn btn-ghost">Reserve a table</a>
           </div>
           <a className="place" href={MAPS} target="_blank" rel="noopener noreferrer">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" /><circle cx="12" cy="10" r="2.5" /></svg>
@@ -38,11 +38,11 @@ export default function Finale() {
           </div>
           <div>
             <h4>Visit</h4>
-            <p>Beside St. Joseph&apos;s School,<br />Pregnapur Road, Gajwel<br />Open daily from 11:30 am</p><p><a className="dir" href={MAPS} target="_blank" rel="noopener noreferrer">Get directions ↗</a></p>
+            <p>Beside St. Joseph&apos;s School,<br />Pregnapur Road, Gajwel<br />Open daily 11:30 am – 12 am</p><p><a className="dir" href={MAPS} target="_blank" rel="noopener noreferrer">Get directions ↗</a></p>
           </div>
           <div>
             <h4>Contact</h4>
-            <p><a className="dir" href="tel:+917842793473">+91 78427 93473</a><br />Call to order or reserve a table</p>
+            <p><a className="dir" href="tel:+919010001484">+91 90100 01484</a><br /><a className="dir" href="tel:+917842793473">+91 78427 93473</a><br />Call to order or reserve a table</p>
           </div>
           <div>
             <h4>Explore</h4>
