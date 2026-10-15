@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { SplitText } from "./Motion";
 import { img } from "@/lib/images";
@@ -39,7 +40,7 @@ export default function Hero() {
           Sealed-pot biryani, tandoor-fired kebabs and slow curries, cooked from scratch with hand-ground masalas and delivered piping hot.
         </motion.p>
         <motion.div className="cta" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.65, duration: 0.8 }}>
-          <a href="#menu" className="btn">Order your favourites <span className="arrow">→</span></a>
+          <Link href="/order" className="btn">Order your favourites <span className="arrow">→</span></Link>
           <a href="#signature" className="btn btn-ghost">Explore signature dishes</a>
         </motion.div>
         <motion.ul className="hero-stats" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.9, duration: 0.8 }}>

@@ -49,9 +49,16 @@ function Ring({
   const group = useRef<THREE.Group>(null);
   const rot = useRef(0);
   const { viewport } = useThree();
-  useFrame((_, dt) => {
+  useFrame((state, dt) => {
     const g = group.current;
     if (!g) return;
+    // zoom in on phones so the cards fill the stage instead of floating in empty space
+    const cam = state.camera as THREE.PerspectiveCamera;
+    const zoom = state.size.width < 600 ? 1.25 : 1;
+    if (cam.zoom !== zoom) {
+      cam.zoom = zoom;
+      cam.updateProjectionMatrix();
+    }
     // follow the finger tightly while dragging, glide when settling
     rot.current = THREE.MathUtils.damp(rot.current, target.current + drag.current, dragging.current ? 22 : 5, dt);
     g.rotation.y = rot.current;

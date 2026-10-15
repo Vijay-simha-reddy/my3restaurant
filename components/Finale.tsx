@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Reveal, SplitText } from "./Motion";
 import { img } from "@/lib/images";
 import Logo from "./Logo";
@@ -20,7 +21,7 @@ export default function Finale() {
         <Reveal delay={0.15}>
           <p className="cta-text">Order in two taps, or book a table and let us take care of the rest.</p>
           <div className="cta">
-            <a href="#menu" className="btn">Order online <span className="arrow">→</span></a>
+            <Link href="/order" className="btn">Order online <span className="arrow">→</span></Link>
             <a href="tel:+919010001484" className="btn btn-ghost">Reserve a table</a>
           </div>
           <a className="place" href={MAPS} target="_blank" rel="noopener noreferrer">

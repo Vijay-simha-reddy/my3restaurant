@@ -1,8 +1,8 @@
 import Image from "next/image";
+import { WHATSAPP_PHONE } from "@/lib/site";
 
-const PHONE = "919010001484";
 const MESSAGE = "Hi, I'd like to order from MY3";
-const WA_LINK = `https://wa.me/${PHONE}?text=${encodeURIComponent(MESSAGE)}`;
+const WA_LINK = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(MESSAGE)}`;
 
 export default function WhatsAppButton() {
   return (

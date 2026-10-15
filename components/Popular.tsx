@@ -5,18 +5,8 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { dishes, filters, type CategoryId, type Dish } from "@/lib/data";
 import { Reveal, SplitText } from "./Motion";
-import { useCart } from "./Providers";
 
 function FoodCard({ dish }: { dish: Dish }) {
-  const { add } = useCart();
-  const [added, setAdded] = useState(false);
-
-  const onAdd = () => {
-    add(dish.name);
-    setAdded(true);
-    setTimeout(() => setAdded(false), 1400);
-  };
-
   return (
     <motion.article
       layout
@@ -36,10 +26,6 @@ function FoodCard({ dish }: { dish: Dish }) {
         <p>{dish.desc}</p>
         <div className="card-foot">
           <span className="price">₹{dish.price}</span>
-          <button className={`add${added ? " done" : ""}`} onClick={onAdd} aria-label={`Add ${dish.name} to order`}>
-            <span className="add-a">{added ? "Added ✓" : "Add"}</span>
-            <span className="plus" aria-hidden="true">{added ? "" : "+"}</span>
-          </button>
         </div>
       </div>
     </motion.article>

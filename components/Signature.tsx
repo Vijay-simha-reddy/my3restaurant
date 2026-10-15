@@ -3,10 +3,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/react";
 import { dishes } from "@/lib/data";
 import { Reveal, SplitText } from "./Motion";
-import { useCart } from "./Providers";
 
 const Ring = dynamic(() => import("./SignatureRing"), { ssr: false, loading: () => null });
 
@@ -27,7 +27,6 @@ export default function Signature() {
   const seen = useInView(ref, { once: true, margin: "1400px" });
   const live = useInView(ref, { margin: "100px" });
   const reduced = useReducedMotion();
-  const { add } = useCart();
   const dish = list[active];
 
   // Warm the cache while the browser is idle so the 3D ring has its photos (~430 KB) and code before it scrolls into view.
@@ -79,7 +78,7 @@ export default function Signature() {
                 <p>{dish.desc}</p>
                 <div className="sig-buy">
                   <span className="price">₹{dish.price}</span>
-                  <button className="btn" onClick={() => add(dish.name)}>Add to order <span className="arrow">+</span></button>
+                  <Link href="/order" className="btn">Order now <span className="arrow">→</span></Link>
                 </div>
               </motion.div>
             </AnimatePresence>

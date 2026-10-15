@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { ParallaxImage, Reveal, SplitText } from "./Motion";
 import { img } from "@/lib/images";
@@ -36,7 +37,7 @@ export default function Offer() {
           </p>
           <div className="offer-price"><s>₹1,999</s><strong>₹1,499</strong></div>
           <div className="offer-actions">
-            <a href="#menu" className="btn btn-dark">Order the feast <span className="arrow">→</span></a>
+            <Link href="/order" className="btn btn-dark">Order the feast <span className="arrow">→</span></Link>
             <button className="code" onClick={copy} aria-label="Copy offer code MY3">
               <span>{copied ? "Copied!" : "MY3"}</span>
               <small>extra 20% off first order</small>
