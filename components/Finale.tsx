@@ -38,15 +38,15 @@ export default function Finale() {
             <p>A family restaurant in Gajwel. Sealed-pot biryani, live-grill kebabs and slow curries.</p>
           </div>
           <div>
-            <h4>Visit</h4>
+            <h2>Visit</h2>
             <p>Beside St. Joseph&apos;s School,<br />Pregnapur Road, Gajwel<br />Open daily 11:30 am – 12 am</p><p><a className="dir" href={MAPS} target="_blank" rel="noopener noreferrer">Get directions ↗</a></p>
           </div>
           <div>
-            <h4>Contact</h4>
+            <h2>Contact</h2>
             <p><a className="dir" href="tel:+919010001484">+91 90100 01484</a><br /><a className="dir" href="tel:+917842793473">+91 78427 93473</a><br />Call to order or reserve a table</p>
           </div>
           <div>
-            <h4>Explore</h4>
+            <h2>Explore</h2>
             <p><a href="#menu">Menu</a> · <a href="#categories">Categories</a><br /><a href="#story">Our story</a> · <a href="#reviews">Reviews</a></p>
           </div>
         </div>

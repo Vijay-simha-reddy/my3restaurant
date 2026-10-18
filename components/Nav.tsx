@@ -37,6 +37,7 @@ export default function Nav() {
           {links.map(([l, h]) => (
             <a key={h} href={h} onClick={() => setOpen(false)}>{l}</a>
           ))}
+          <Link href="/order" className="links-order" onClick={() => setOpen(false)}>Order now</Link>
         </nav>
         <div className="nav-actions">
           <Link href="/order" className="btn btn-sm">Order now</Link>

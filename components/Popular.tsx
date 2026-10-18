@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { dishes, filters, type CategoryId, type Dish } from "@/lib/data";
 import { Reveal, SplitText } from "./Motion";
@@ -26,6 +27,7 @@ function FoodCard({ dish }: { dish: Dish }) {
         <p>{dish.desc}</p>
         <div className="card-foot">
           <span className="price">₹{dish.price}</span>
+          <Link href="/order" className="btn btn-sm card-order" aria-label={`Order ${dish.name}`}>Order <span className="arrow">→</span></Link>
         </div>
       </div>
     </motion.article>
