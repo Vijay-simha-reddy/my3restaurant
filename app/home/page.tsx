@@ -1,0 +1,35 @@
+import Categories from "@/components/Categories";
+import Finale from "@/components/Finale";
+import Hero from "@/components/Hero";
+import Intro from "@/components/Intro";
+import Marquee from "@/components/Marquee";
+import Nav from "@/components/Nav";
+import Offer from "@/components/Offer";
+import Popular from "@/components/Popular";
+import Reviews from "@/components/Reviews";
+import Signature from "@/components/Signature";
+import Story from "@/components/Story";
+import WhatsAppButton from "@/components/WhatsAppButton";
+
+export const metadata = { alternates: { canonical: "/home" } };
+
+export default function Home() {
+  return (
+    <>
+      <WhatsAppButton />
+      <Intro />
+      <Nav />
+      <main>
+        <Hero />
+        <Marquee />
+        <Popular />
+        <Categories />
+        <Signature />
+        <Story />
+        <Offer />
+        <Reviews />
+        <Finale />
+      </main>
+    </>
+  );
+}

@@ -8,7 +8,7 @@ import { dishes, filters, type CategoryId, type Dish } from "@/lib/data";
 import { WHATSAPP_PHONE } from "@/lib/site";
 import Logo from "./Logo";
 
-const ORDER_TYPES = ["Delivery", "Pickup", "Dine-in"] as const;
+const ORDER_TYPES = ["Delivery", "Pickup"] as const;
 type OrderType = (typeof ORDER_TYPES)[number];
 
 const isVeg = (d: Dish) => !d.cats.includes("nonveg");
@@ -53,9 +53,13 @@ export default function OrderMenu() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setCheckout(false);
     };
+    document.documentElement.style.overflow = "hidden";
+    document.documentElement.style.scrollbarWidth = "none";
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
     return () => {
+      document.documentElement.style.overflow = "";
+      document.documentElement.style.scrollbarWidth = "";
       document.body.style.overflow = "";
       window.removeEventListener("keydown", onKey);
     };
@@ -164,7 +168,6 @@ export default function OrderMenu() {
           >
             <motion.div
               className="sheet"
-              data-lenis-prevent
               role="dialog"
               aria-modal="true"
               aria-label="Your order"
@@ -175,61 +178,63 @@ export default function OrderMenu() {
               transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1] }}
             >
               <button type="button" className="sheet-close" onClick={() => setCheckout(false)} aria-label="Close">×</button>
-              <p className="eyebrow">Your order</p>
-              <h2>Review and send</h2>
-
-              <ul className="sheet-lines">
-                {lines.map((d) => (
-                  <li key={d.id}>
-                    <span className="sl-name">{d.name}</span>
-                    <Stepper dish={d} qty={cart[d.id]} onChange={(delta) => change(d.id, delta)} />
-                    <span className="sl-price">{rupees(d.price * cart[d.id])}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="sheet-total">
-                <span>Total</span>
-                <strong>{rupees(total)}</strong>
-              </div>
-
-              <form className="sheet-form" onSubmit={onSubmit}>
-                <div className="sheet-row">
-                  <label>
-                    <span>Your name</span>
-                    <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Full name" />
-                  </label>
-                  <label>
-                    <span>Phone number</span>
-                    <input
-                      required
-                      type="tel"
-                      inputMode="numeric"
-                      pattern="[0-9]{10}"
-                      maxLength={10}
-                      title="Enter a 10-digit mobile number"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
-                      placeholder="10-digit number"
-                    />
-                  </label>
-                </div>
-                <fieldset className="seg">
-                  <legend>Order type</legend>
-                  {ORDER_TYPES.map((t) => (
-                    <label key={t}>
-                      <input type="radio" name="order-type" checked={type === t} onChange={() => setType(t)} />
-                      <span>{t}</span>
-                    </label>
+              <div className="sheet-scroll" data-lenis-prevent>
+                <p className="eyebrow">Your order</p>
+                <h2>Review and send</h2>
+  
+                <ul className="sheet-lines">
+                  {lines.map((d) => (
+                    <li key={d.id}>
+                      <span className="sl-name">{d.name}</span>
+                      <Stepper dish={d} qty={cart[d.id]} onChange={(delta) => change(d.id, delta)} />
+                      <span className="sl-price">{rupees(d.price * cart[d.id])}</span>
+                    </li>
                   ))}
-                </fieldset>
-                {type === "Delivery" && (
-                  <label>
-                    <span>Delivery address</span>
-                    <input required value={address} onChange={(e) => setAddress(e.target.value)} placeholder="House no, street, landmark" />
-                  </label>
-                )}
-                <button type="submit" className="btn">Send order on WhatsApp <span className="arrow">→</span></button>
-              </form>
+                </ul>
+                <div className="sheet-total">
+                  <span>Total</span>
+                  <strong>{rupees(total)}</strong>
+                </div>
+  
+                <form className="sheet-form" onSubmit={onSubmit}>
+                  <div className="sheet-row">
+                    <label>
+                      <span>Your name</span>
+                      <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Full name" />
+                    </label>
+                    <label>
+                      <span>Phone number</span>
+                      <input
+                        required
+                        type="tel"
+                        inputMode="numeric"
+                        pattern="[0-9]{10}"
+                        maxLength={10}
+                        title="Enter a 10-digit mobile number"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
+                        placeholder="10-digit number"
+                      />
+                    </label>
+                  </div>
+                  <fieldset className="seg">
+                    <legend>Order type</legend>
+                    {ORDER_TYPES.map((t) => (
+                      <label key={t}>
+                        <input type="radio" name="order-type" checked={type === t} onChange={() => setType(t)} />
+                        <span>{t}</span>
+                      </label>
+                    ))}
+                  </fieldset>
+                  {type === "Delivery" && (
+                    <label>
+                      <span>Delivery address</span>
+                      <input required value={address} onChange={(e) => setAddress(e.target.value)} placeholder="House no, street, landmark" />
+                    </label>
+                  )}
+                  <button type="submit" className="btn">Send order on WhatsApp <span className="arrow">→</span></button>
+                </form>
+              </div>
             </motion.div>
           </motion.div>
         )}

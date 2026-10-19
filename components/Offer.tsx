@@ -31,7 +31,7 @@ export default function Offer() {
           <ParallaxImage src={img.curries} alt="A feast of curries and steamed rice served in steel kadais" speed={26} sizes="(max-width: 900px) 90vw, 40vw" />
         </div>
       </motion.div>
-      <Reveal><p className="fine">Offer valid on delivery and dine-in. Sample offer for demonstration.</p></Reveal>
+      <Reveal><p className="fine">Offer valid on delivery and pickup. Sample offer for demonstration.</p></Reveal>
     </section>
   );
 }
